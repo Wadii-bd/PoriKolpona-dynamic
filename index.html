@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PoriKolpona</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="welcome" class="welcome login-shell">
+  <section class="login-story">
+    <div class="wbrand"><img src="assets/professor-panda-logo.png" alt="Professor Panda"><span>PoriKolpona</span></div>
+    <div><span class="panda-kicker">YOUR PERSONAL STUDY SPACE</span><h1>Make room for<br><em>big ideas.</em></h1><p class="muted">Your chapters, lectures, deadlines and daily progress, together in one place.</p></div>
+    <img class="login-panda" src="assets/professor-panda-loop.gif" alt="Professor Panda, your study companion">
+    <p class="login-quote">“One chapter at a time. You've got this.”</p>
+  </section>
+  <section class="login-form-side"><form id="wform" class="card wcard" novalidate>
+    <div class="welcome-tag">● SECURE STUDENT LOGIN</div><h2>Welcome back.</h2><p class="muted">Sign in to continue your learning journey.</p>
+    <label>Login ID<input id="loginId" name="loginId" maxlength="48" autocomplete="username" placeholder="Enter your login ID" required></label>
+    <label>Password<div class="password-wrap"><input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required><button type="button" id="togglePassword" class="show-pass">SHOW</button></div></label>
+    <label class="remember-row"><input id="remember" type="checkbox" checked> Keep me signed in on this browser</label>
+    <p class="err" id="werr" role="alert"></p><button class="btn primary big" id="loginButton">Sign in to PoriKolpona</button>
+    <p class="access-note">Need an account? <a href="https://wa.me/8801345245819?text=Hello%2C%20I%20would%20like%20to%20request%20PoriKolpona%20access." target="_blank" rel="noopener">Request access</a></p>
+    <p class="login-foot">Your study progress syncs securely across your devices.</p>
+  </form></section>
+</div>
+<div id="app" class="app" hidden>
+  <nav id="nav" class="nav" aria-label="Main"></nav>
+  <div class="main">
+    <header class="top">
+      <h2 id="title"></h2>
+      <button id="chip" class="chip" data-a="nav" data-v="deadlines" hidden></button>
+      <div class="acts">
+        <button class="btn" data-a="fo">🍅 Focus</button>
+        <button class="btn primary" data-a="add">+ Add Chapter</button>
+        <button id="theme" class="btn icon" data-a="tt" aria-label="Toggle light or dark theme"></button><button class="btn" data-a="signout">Sign out</button>
+      </div>
+    </header>
+    <main id="view"></main>
+  </div>
+</div>
+<dialog id="dlg" aria-label="Chapter form"></dialog>
+<input type="file" id="file" accept="application/json,.json" hidden>
+<div id="focus" class="focus" hidden role="dialog" aria-modal="true" aria-label="Focus timer"></div>
+<input type="file" id="photo" accept="image/*" hidden>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
